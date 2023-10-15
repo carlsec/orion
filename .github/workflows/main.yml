@@ -34,6 +34,8 @@ jobs:
         run: npm install
       - name: Build
         run: npx tsc
+      - name: Copy src to root
+        run: mv src/* .
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with: 
