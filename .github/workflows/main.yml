@@ -36,6 +36,8 @@ jobs:
         run: npx tsc
       - name: Copy src to root
         run: mv src/* .
+      - name: Copy dist to root
+        run: mv dist/* .
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with: 
