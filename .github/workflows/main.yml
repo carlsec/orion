@@ -36,6 +36,8 @@ jobs:
         run: npx tsc
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
+        with: 
+          path: .
 
   # Deployment job
   deploy:
