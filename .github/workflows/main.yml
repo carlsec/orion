@@ -34,14 +34,16 @@ jobs:
         run: npm install
       - name: Build
         run: npx tsc
-      - name: Copy src to root
-        run: mv src/* .
-      - name: Copy dist to root
-        run: mv dist/* .
+      - name: Create folder build
+        run: mkdir build
+      - name: Copy static files to folder build
+        run: mv src/*.html ./build
+      - name: Copy dist to folder build
+        run: mv dist/* ./build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with: 
-          path: .
+          path: ./build
 
   # Deployment job
   deploy:
